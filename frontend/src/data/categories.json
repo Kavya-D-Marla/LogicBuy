@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Men",
+    "slug": "men",
+    "description": "Shirts, T-Shirts, Jeans & more",
+    "image": "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=400&h=500&fit=crop",
+    "gradient": "from-blue-500 to-purple-600"
+  },
+  {
+    "id": 2,
+    "name": "Women",
+    "slug": "women",
+    "description": "Dresses, Tops, Ethnic & more",
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=500&fit=crop",
+    "gradient": "from-pink-500 to-rose-600"
+  },
+  {
+    "id": 3,
+    "name": "Kids",
+    "slug": "kids",
+    "description": "Fun & colorful fashion",
+    "image": "https://images.unsplash.com/photo-1503944583220-79d8926ad5e2?w=400&h=500&fit=crop",
+    "gradient": "from-yellow-400 to-orange-500"
+  },
+  {
+    "id": 4,
+    "name": "Beauty",
+    "slug": "beauty",
+    "description": "Skincare, Makeup & Fragrances",
+    "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=500&fit=crop",
+    "gradient": "from-rose-400 to-pink-600"
+  },
+  {
+    "id": 5,
+    "name": "Footwear",
+    "slug": "footwear",
+    "description": "Sneakers, Heels, Boots & more",
+    "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=500&fit=crop",
+    "gradient": "from-orange-500 to-red-600"
+  },
+  {
+    "id": 6,
+    "name": "Accessories",
+    "slug": "accessories",
+    "description": "Bags, Watches, Sunglasses & more",
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=500&fit=crop",
+    "gradient": "from-purple-500 to-indigo-600"
+  }
+]
