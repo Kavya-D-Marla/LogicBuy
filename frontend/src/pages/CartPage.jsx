@@ -41,7 +41,7 @@ export default function CartPage() {
 
   if (items.length === 0) {
     return (
-      <div className="max-w-[1400px] mx-auto px-4 py-20 text-center">
+      <div className="myntra-container py-20 text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <p className="text-7xl mb-6">🛒</p>
           <h2 className="font-heading text-2xl font-bold mb-2">Your cart is empty</h2>
@@ -55,7 +55,7 @@ export default function CartPage() {
   }
 
   return (
-    <div className="max-w-[1400px] mx-auto px-4 lg:px-6 py-6">
+    <div className="myntra-container py-6">
       <div className="flex items-center justify-between mb-8">
         <h1 className="font-heading text-2xl lg:text-3xl font-bold">Shopping Cart ({cartCount})</h1>
         <button onClick={() => { clearCart(); addToast('Cart cleared', 'info'); }} className="text-sm text-error font-medium flex items-center gap-1 hover:underline">

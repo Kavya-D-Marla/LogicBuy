@@ -94,7 +94,7 @@ export default function ShopPage() {
   }, [filters, sortBy, searchParam]);
 
   return (
-    <div className="max-w-[1400px] mx-auto px-4 lg:px-6 py-6">
+    <div className="myntra-container py-6">
       {/* Header */}
       <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>

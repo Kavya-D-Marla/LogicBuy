@@ -13,22 +13,19 @@ const heroSlides = [
     title: 'Summer Collection 2026',
     subtitle: 'Discover the hottest trends of the season',
     cta: 'Shop Now',
-    gradient: 'from-pink via-purple to-orange',
-    bgColor: 'bg-gradient-to-br from-pink-dark via-purple to-orange',
+    image: 'https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1600&q=80',
   },
   {
     title: 'Up to 60% Off',
     subtitle: 'Mega fashion sale is live. Don\'t miss out!',
     cta: 'Grab Deals',
-    gradient: 'from-purple via-pink to-orange',
-    bgColor: 'bg-gradient-to-br from-purple-dark via-pink to-orange',
+    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80',
   },
   {
     title: 'New Arrivals Daily',
     subtitle: 'Fresh styles added every day, curated just for you',
     cta: 'Explore',
-    gradient: 'from-orange via-pink to-purple',
-    bgColor: 'bg-gradient-to-br from-orange via-pink-dark to-purple',
+    image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80',
   },
 ];
 
@@ -68,7 +65,7 @@ export default function HomePage() {
   };
 
   const SectionHeader = ({ icon: Icon, title, subtitle, link }) => (
-    <div className="flex items-end justify-between mb-8">
+    <div className="flex items-end justify-between mb-8 mt-12 lg:mt-16">
       <div>
         <div className="flex items-center gap-2 mb-1">
           {Icon && <Icon size={22} className="text-pink" />}
@@ -96,8 +93,9 @@ export default function HomePage() {
                 idx === currentSlide ? 'opacity-100 translate-x-0' : idx < currentSlide ? 'opacity-0 -translate-x-full' : 'opacity-0 translate-x-full'
               }`}
               style={{
-                background: `linear-gradient(135deg, #C2185B 0%, #7C3AED 50%, #FF5722 100%)`,
-                backgroundPosition: `${idx * 30}% center`,
+                backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 100%), url(${slide.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
               }}
             >
               <div className="max-w-[1400px] mx-auto px-4 lg:px-6 w-full">
@@ -111,10 +109,10 @@ export default function HomePage() {
                   <span className="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-xs font-semibold mb-4 backdrop-blur-sm">
                     ✨ LIMITED TIME OFFER
                   </span>
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-white mb-4 leading-tight">
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black mb-4 leading-tight" style={{ color: '#ffffff' }}>
                     {slide.title}
                   </h1>
-                  <p className="text-white/80 text-lg mb-8">{slide.subtitle}</p>
+                  <p className="text-lg mb-8" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>{slide.subtitle}</p>
                   <Link
                     to="/shop"
                     className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-neutral-900 rounded-full font-bold text-sm hover:shadow-glow-pink hover:scale-105 transition-all"
@@ -153,7 +151,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="max-w-[1400px] mx-auto px-4 lg:px-6">
+      <div className="myntra-container">
         {/* Categories Grid */}
         <motion.section
           className="py-12 lg:py-16"
@@ -212,9 +210,9 @@ export default function HomePage() {
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <Zap size={22} className="text-warning" />
-                  <h2 className="font-heading text-2xl lg:text-3xl font-bold">Flash Sale</h2>
+                  <h2 className="font-heading text-2xl lg:text-3xl font-bold" style={{ color: '#ffffff' }}>Flash Sale</h2>
                 </div>
-                <p className="text-neutral-400 text-sm">Hurry up! Deals end in:</p>
+                <p className="text-sm" style={{ color: '#D5D6D8' }}>Hurry up! Deals end in:</p>
               </div>
               <CountdownTimer targetDate={saleEndDate} />
             </div>

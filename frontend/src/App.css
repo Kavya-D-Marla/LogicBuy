@@ -1,3 +1,16 @@
+/* ─── Offer Strip ─── */
+.offer-strip {
+  background: linear-gradient(90deg, #ff3f6c 0%, #ff7096 50%, #ff3f6c 100%);
+  background-size: 200% 100%;
+  animation: stripShimmer 4s ease infinite;
+}
+
+@keyframes stripShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* ─── Carousel ─── */
 .carousel-slide {
   min-width: 100%;
@@ -8,13 +21,13 @@
   width: 8px;
   height: 8px;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.4);
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .carousel-dot.active {
-  width: 24px;
+  width: 28px;
   background: white;
 }
 
@@ -52,19 +65,18 @@
   );
 }
 
-/* ─── Product Card ─── */
+/* ─── Product Card (Myntra-style) ─── */
 .product-card {
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   overflow: hidden;
   background: var(--color-background);
-  border: 1px solid var(--color-border-light);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--color-border);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
 }
 
 .product-card .product-image {
@@ -77,7 +89,7 @@
 }
 
 .product-card:hover .product-image img {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .product-card .quick-actions {
@@ -225,28 +237,93 @@
   box-shadow: 0 0 0 2px var(--color-pink);
 }
 
-/* ─── Category Card ─── */
+/* ─── Category Card (Myntra-style) ─── */
 .category-card {
-  border-radius: var(--radius-xl);
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--radius-lg);
 }
 
 .category-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
 .category-card::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 40%, transparent 100%);
   transition: opacity 0.3s ease;
 }
 
 .category-card:hover::after {
-  background: linear-gradient(to top, rgba(233,30,99,0.7), transparent);
+  background: linear-gradient(to top, rgba(255,63,108,0.65) 0%, rgba(0,0,0,0.1) 40%, transparent 100%);
+}
+
+/* ─── Myntra-style Navbar Links ─── */
+.nav-link {
+  position: relative;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--color-neutral-700);
+  transition: color 0.2s ease;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  padding: 0 18px; /* Explicit padding to guarantee spacing */
+  display: flex;
+  align-items: center;
+  height: 56px;
+}
+
+.nav-link:hover {
+  color: var(--color-pink);
+  border-bottom-color: var(--color-pink);
+}
+
+.nav-link.active-link {
+  color: var(--color-pink);
+  border-bottom-color: var(--color-pink);
+}
+
+/* ─── Section Divider ─── */
+.section-divider {
+  height: 1px;
+  background: var(--color-border-light);
+  margin: 0;
+}
+
+/* ─── Brand Logo Hover ─── */
+.brand-card {
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-border-light);
+}
+
+.brand-card:hover {
+  border-color: var(--color-pink);
+  box-shadow: var(--shadow-md);
+}
+
+/* ─── Banner Button ─── */
+.banner-cta {
+  background: var(--color-pink);
+  color: white;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.banner-cta:hover {
+  background: var(--color-pink-dark);
+  box-shadow: var(--shadow-glow-pink);
+  transform: translateY(-1px);
 }

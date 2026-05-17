@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Heart, Mail, MapPin, Phone, ArrowRight, Globe, MessageCircle, Share2, Play } from 'lucide-react';
 
 const footerLinks = {
@@ -33,6 +33,11 @@ const socials = [
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const location = useLocation();
+
+  if (location.pathname === '/smart-assistant') {
+    return null;
+  }
 
   const handleSubscribe = (e) => {
     e.preventDefault();

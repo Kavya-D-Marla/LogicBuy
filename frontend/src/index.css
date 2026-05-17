@@ -1,50 +1,51 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ─── Tailwind v4 Theme Tokens ─── */
 @theme {
-  /* Brand Colors */
-  --color-pink: #E91E63;
-  --color-pink-light: #F48FB1;
-  --color-pink-dark: #C2185B;
-  --color-orange: #FF5722;
-  --color-orange-light: #FF8A65;
+  /* Brand Colors – Myntra-inspired */
+  --color-pink: #ff3f6c;
+  --color-pink-light: #ff7096;
+  --color-pink-dark: #e0365d;
+  --color-orange: #ff8a65;
+  --color-orange-light: #ffab91;
   --color-purple: #7C3AED;
   --color-purple-light: #A78BFA;
   --color-purple-dark: #5B21B6;
 
   /* Neutral palette */
   --color-neutral-50: #FAFAFA;
-  --color-neutral-100: #F5F5F5;
-  --color-neutral-200: #EEEEEE;
-  --color-neutral-300: #E0E0E0;
-  --color-neutral-400: #BDBDBD;
-  --color-neutral-500: #9E9E9E;
-  --color-neutral-600: #757575;
-  --color-neutral-700: #616161;
-  --color-neutral-800: #424242;
-  --color-neutral-900: #212121;
-  --color-neutral-950: #0A0A0A;
+  --color-neutral-100: #F5F5F6;
+  --color-neutral-200: #EAEAEC;
+  --color-neutral-300: #D5D6D8;
+  --color-neutral-400: #94969f;
+  --color-neutral-500: #7e818c;
+  --color-neutral-600: #696b79;
+  --color-neutral-700: #535766;
+  --color-neutral-800: #3e4152;
+  --color-neutral-900: #282c3f;
+  --color-neutral-950: #1a1d2e;
 
   /* Semantic tokens */
   --color-background: #FFFFFF;
-  --color-foreground: #0A0A0A;
-  --color-surface: #FAFAFA;
-  --color-surface-hover: #F5F5F5;
-  --color-border: #E0E0E0;
-  --color-border-light: #EEEEEE;
-  --color-muted: #9E9E9E;
-  --color-muted-foreground: #757575;
-  --color-success: #10B981;
+  --color-foreground: #282c3f;
+  --color-surface: #f5f5f6;
+  --color-surface-hover: #eaeaec;
+  --color-border: #d4d5d9;
+  --color-border-light: #eaeaec;
+  --color-muted: #94969f;
+  --color-muted-foreground: #7e818c;
+  --color-success: #03a685;
   --color-warning: #F59E0B;
-  --color-error: #EF4444;
+  --color-error: #ff3f6c;
 
   /* Fonts */
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Poppins', sans-serif;
 
   /* Radius */
-  --radius-xs: 4px;
-  --radius-sm: 6px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-xl: 16px;
@@ -52,12 +53,12 @@
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
-  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
-  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
-  --shadow-glow-pink: 0 0 20px rgba(233,30,99,0.3);
-  --shadow-glow-purple: 0 0 20px rgba(124,58,237,0.3);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 2px 8px -2px rgba(0, 0, 0, 0.08), 0 1px 3px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 8px 24px -4px rgba(0, 0, 0, 0.08), 0 2px 6px -2px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 16px 40px -6px rgba(0, 0, 0, 0.1), 0 4px 8px -3px rgba(0, 0, 0, 0.05);
+  --shadow-glow-pink: 0 4px 20px rgba(255, 63, 108, 0.25);
+  --shadow-glow-purple: 0 4px 20px rgba(124, 58, 237, 0.2);
 
   /* Animations */
   --animate-shimmer: shimmer 2s infinite linear;
@@ -68,7 +69,9 @@
 }
 
 /* ─── Base Styles ─── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -86,13 +89,21 @@ body {
   background-color: var(--color-background);
   line-height: 1.6;
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 14px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.3;
+  color: var(--color-foreground);
 }
+
 
 a {
   text-decoration: none;
@@ -112,104 +123,157 @@ button {
   font-family: inherit;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   font-family: inherit;
   font-size: inherit;
 }
 
 /* ─── Dark Mode ─── */
 .dark {
-  --color-background: #0A0A0A;
+  --color-background: #0f1017;
   --color-foreground: #FAFAFA;
-  --color-surface: #171717;
-  --color-surface-hover: #262626;
-  --color-border: #2E2E2E;
-  --color-border-light: #1F1F1F;
+  --color-surface: #1a1d2e;
+  --color-surface-hover: #252838;
+  --color-border: #2e3144;
+  --color-border-light: #1f2233;
   --color-muted: #6B7280;
   --color-muted-foreground: #9CA3AF;
 }
 
 /* ─── Scrollbar ─── */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-surface);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-neutral-400);
+  background: var(--color-neutral-300);
   border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-neutral-500);
+  background: var(--color-neutral-400);
 }
 
 /* ─── Keyframes ─── */
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @keyframes pulse-soft {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
 }
 
 @keyframes slide-up {
-  from { transform: translateY(10px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes slide-down {
-  from { transform: translateY(-10px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes flip {
-  0% { transform: rotateX(0deg); }
-  50% { transform: rotateX(90deg); }
-  100% { transform: rotateX(0deg); }
+  0% {
+    transform: rotateX(0deg);
+  }
+
+  50% {
+    transform: rotateX(90deg);
+  }
+
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 /* ─── Utility Classes ─── */
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-pink) 0%, var(--color-purple) 50%, var(--color-orange) 100%);
+  background: linear-gradient(135deg, var(--color-pink) 0%, var(--color-pink-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-bg {
-  background: linear-gradient(135deg, var(--color-pink) 0%, var(--color-purple) 50%, var(--color-orange) 100%);
+  background: linear-gradient(135deg, var(--color-pink) 0%, var(--color-pink-dark) 100%);
 }
 
 .gradient-bg-subtle {
-  background: linear-gradient(135deg, rgba(233,30,99,0.05) 0%, rgba(124,58,237,0.05) 50%, rgba(255,87,34,0.05) 100%);
+  background: linear-gradient(135deg, rgba(255, 63, 108, 0.04) 0%, rgba(255, 138, 101, 0.04) 100%);
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .dark .glass {
-  background: rgba(10, 10, 10, 0.8);
+  background: rgba(15, 16, 23, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .line-clamp-1 {
   display: -webkit-box;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -217,6 +281,7 @@ input, select, textarea {
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -228,4 +293,26 @@ input, select, textarea {
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* ─── Container utility ─── */
+.myntra-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
+
+@media (max-width: 1024px) {
+  .myntra-container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .myntra-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
